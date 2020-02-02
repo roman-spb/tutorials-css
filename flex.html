@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flex tutorial</title>
+	<link rel="stylesheet" type="text/css" href="flex.css" />
+	<script type="text/javascript" src="flex.js"></script>
+</head>
+<body>
+<header>
+	<h1>CSS Tutorials v.0.1</h1></header>
+<article>
+	<h2>Flex</h2>
+	<div class="item-container">
+		<form>
+			<fieldset data-propname="flex-direction" id="flex_direction_control">
+				<legend><code>flex-direction</code> (direction of child elements)</legend>
+				<div class="flex-options">
+					<div class="element-container"><label for="direction_default"><code>initial</code> (default is <code>row</code>)</label><input type="radio" name="direction" id="direction_default" checked="checked" data-propvalue="initial"/></div>
+					<div class="element-container"><label for="direction_row"><code>row</code></label><input type="radio" name="direction" id="direction_row" data-propvalue="row" /></div>
+					<div class="element-container"><label for="direction_column"><code>column</code></label><input type="radio" name="direction" id="direction_column" data-propvalue="column" /></div>
+					<div class="element-container"><label for="direction_row_reverse"><code>row-reverse</code></label><input type="radio" name="direction" id="direction_row_reverse" data-propvalue="row-reverse" /></div>
+					<div class="element-container"><label for="direction_column_reverse"><code>column-reverse</code></label><input type="radio" name="direction" id="direction_column_reverse" data-propvalue="column-reverse" /></div>		
+				</div>		
+			</fieldset>
+
+			<fieldset data-propname="justify-content" id="flex_justifycontent_control">
+				<legend><code>justify-content</code> (main-axis)</legend>
+				<div class="flex-options">
+					<div class="element-container"><label for="justifycontent_default"><code>initial</code> (default is <code>flex-start</code>)</label><input type="radio" name="justifycontent" id="justifycontent_default" checked="checked" data-propvalue="initial"/></div>
+					<div class="element-container"><label for="justifycontent_flexstart"><code>flex-start</code></label><input type="radio" name="justifycontent" id="justifycontent_flexstart" data-propvalue="flex-start" /></div>
+					<div class="element-container"><label for="justifycontent_flexend"><code>flex-end</code></label><input type="radio" name="justifycontent" id="justifycontent_flexend" data-propvalue="flex-end" /></div>
+					<div class="element-container"><label for="justifycontent_center"><code>center</code></label><input type="radio" name="justifycontent" id="justifycontent_center" data-propvalue="center" /></div>
+					
+					<div class="element-container"><label for="justifycontent_spacebetween"><code>space-between</code></label><input type="radio" name="justifycontent" id="justifycontent_spacebetween" data-propvalue="space-between" /></div>
+
+					<div class="element-container"><label for="justifycontent_spacearound"><code>space-around</code></label><input type="radio" name="justifycontent" id="justifycontent_spacearound" data-propvalue="space-around" /></div>	
+				</div>		
+			</fieldset>
+			
+
+			<fieldset data-propname="align-items" id="flex_alignitems_control">
+				<legend><code>align-items</code> (cross-axis)</legend>
+				<div class="flex-options">
+					<div class="element-container"><label for="alignitems_default"><code>initial</code> (default is <code>stretch</code>)</label><input type="radio" name="alignitems" id="alignitems_default" checked="checked" data-propvalue="initial"/></div>
+					<div class="element-container"><label for="alignitems_stretch"><code>stretch</code></label><input type="radio" name="alignitems" id="alignitems_stretch" data-propvalue="stretch" /></div>
+					<div class="element-container"><label for="alignitems_center"><code>center</code></label><input type="radio" name="alignitems" id="alignitems_center" data-propvalue="center" /></div>
+					<div class="element-container"><label for="alignitems_flexstart"><code>flex-start</code></label><input type="radio" name="alignitems" id="alignitems_flexstart" data-propvalue="flex-start" /></div>		
+					<div class="element-container"><label for="alignitems_flexend"><code>flex-end</code></label><input type="radio" name="alignitems" id="alignitems_flexend" data-propvalue="flex-end" /></div>
+					<div class="element-container"><label for="alignitems_baseline"><code>baseline</code></label><input type="radio" name="alignitems" id="alignitems_baseline" data-propvalue="baseline" /></div>
+				</div>		
+			</fieldset>
+
+		</form>
+	</div>	
+	<div class="item-container flex-container" id="flex_directions"> 
+		<div class="flex-item item-1">1</div> 
+		<div class="flex-item item-2">2</div>
+		<div class="flex-item item-3">3</div>
+		<div class="flex-item item-4">4</div>
+		<div class="flex-item item-5">5</div> 
+		<div class="flex-item item-6">6</div> 
+		<div class="flex-item item-7">7</div> 
+	</div>
+
+</article>
+</body>
+</html>
