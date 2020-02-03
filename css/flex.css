@@ -25,8 +25,14 @@ BODY {
 	justify-content:  flex-start;
 }
 
-.targetbox-options input[type='text'] {
+.targetbox-options input[type='text'],
+.item-options input[type='text']
+ {
 	width: 4em;
+}
+
+.item-options input[type='text'] {
+	margin-left:2em;
 }
 
 .targetbox-options .element-container {
@@ -48,6 +54,24 @@ legend code, label code {
 
 fieldset {
 	margin-bottom: 1.5em;
+}
+
+.row-group {
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+	height:14em;
+}
+
+.center {
+	text-align: center;
+}
+.row button {
+	margin: 0 1em;
+}
+
+.row button {
+
 }
 
 .flex-container {
