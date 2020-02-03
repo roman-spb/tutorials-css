@@ -10,6 +10,9 @@
 	<h1>CSS Tutorials v.0.1</h1></header>
 <article>
 	<h2>Flex</h2>
+	<!--
+	https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+	-->		
 	<div class="item-container">
 		<form>
 			<fieldset data-propname="flex-direction" id="flex_direction_control">
@@ -38,6 +41,17 @@
 			</fieldset>
 			
 
+			<fieldset data-propname="flex-wrap" id="flex_wrap_control">
+				<legend><code>flex-wrap</code> (main-axis)</legend>
+				<div class="flex-options">
+					<div class="element-container"><label for="wrap_default"><code>initial</code> (default is <code>nowrap</code>)</label><input type="radio" name="wrap" id="wrap_default" checked="checked" data-propvalue="initial"/></div>
+					<div class="element-container"><label for="wrap_nowrap"><code>nowrap</code></label><input type="radio" name="wrap" id="wrap_nowrap" data-propvalue="nowrap" /></div>
+					<div class="element-container"><label for="wrap_wrap"><code>wrap</code></label><input type="radio" name="wrap" id="wrap_wrap" data-propvalue="wrap" /></div>
+					<div class="element-container"><label for="wrap_wrapreverse"><code>wrap-reverse</code></label><input type="radio" name="wrap" id="wrap_wrapreverse" data-propvalue="wrap-reverse" /></div>
+					
+				</div>		
+			</fieldset>
+
 			<fieldset data-propname="align-items" id="flex_alignitems_control">
 				<legend><code>align-items</code> (cross-axis)</legend>
 				<div class="flex-options">
@@ -50,16 +64,19 @@
 				</div>		
 			</fieldset>
 
+
+
 		</form>
-	</div>	
+	</div>
+
 	<div class="item-container flex-container" id="flex_directions"> 
-		<div class="flex-item item-1">1</div> 
-		<div class="flex-item item-2">2</div>
-		<div class="flex-item item-3">3</div>
-		<div class="flex-item item-4">4</div>
-		<div class="flex-item item-5">5</div> 
-		<div class="flex-item item-6">6</div> 
-		<div class="flex-item item-7">7</div> 
+		<div class="flex-item item-1"><div class="size-emulator">1</div></div> 
+		<div class="flex-item item-2"><div class="size-emulator">2</div></div> 
+		<div class="flex-item item-3"><div class="size-emulator">3</div></div> 
+		<div class="flex-item item-4"><div class="size-emulator">4</div></div> 
+		<div class="flex-item item-5"><div class="size-emulator">5</div></div> 
+		<div class="flex-item item-6"><div class="size-emulator">6</div></div> 
+		<div class="flex-item item-7"><div class="size-emulator">7</div></div> 
 	</div>
 
 </article>

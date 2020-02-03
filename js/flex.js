@@ -34,6 +34,28 @@ function ready() {
 		});
 	}
 
+	var wrapControlElement = document.getElementById('flex_wrap_control');
+	var wrapElement = document.getElementById('flex_directions');
+
+	toggles = wrapControlElement.getElementsByTagName('input');
+
+
+	for(var i = 0; i< toggles.length; i++) {
+		toggles[i].addEventListener('change', function() {
+			if(this.checked) {
+				
+				var val = this.getAttribute('data-propvalue');
+				if(val.indexOf('wrap') != -1) {
+					wrapElement.style.width = '450px';
+				} else {
+					wrapElement.style.width = '';
+				}
+				
+				wrapElement.style.flexWrap = this.getAttribute('data-propvalue');
+			}
+		});
+	}
+
 	var alignItemstControlElement = document.getElementById('flex_alignitems_control');
 	var alignItemsElement = document.getElementById('flex_directions');
 
