@@ -36,7 +36,8 @@
 					
 					<div class="element-container"><label for="justifycontent_spacebetween"><code>space-between</code></label><input type="radio" name="justifycontent" id="justifycontent_spacebetween" data-propvalue="space-between" /></div>
 
-					<div class="element-container"><label for="justifycontent_spacearound"><code>space-around</code></label><input type="radio" name="justifycontent" id="justifycontent_spacearound" data-propvalue="space-around" /></div>	
+					<div class="element-container"><label for="justifycontent_spacearound"><code>space-around</code></label><input type="radio" name="justifycontent" id="justifycontent_spacearound" data-propvalue="space-around" /></div>
+					<div class="element-container"><label for="justifycontent_spaceevenly"><code>space-evenly</code></label><input type="radio" name="justifycontent" id="justifycontent_spaceevenly" data-propvalue="space-evenly" /></div>
 				</div>		
 			</fieldset>
 			
@@ -64,10 +65,40 @@
 				</div>		
 			</fieldset>
 
+			<fieldset data-propname="align-content" id="flex_aligncontent_control">
+				<legend><code>align-content</code> (cross-axis)</legend>
+				<div class="flex-options">
+					<div class="element-container"><label for="aligncontent_default"><code>initial</code> (default is <code>stretch</code>)</label><input type="radio" name="aligncontent" id="aligncontent_default" checked="checked" data-propvalue="initial"/></div>
 
+					<div class="element-container"><label for="aligncontent_stretch"><code>stretch</code></label><input type="radio" name="aligncontent" id="aligncontent_stretch" data-propvalue="stretch" /></div>
+	
+					<div class="element-container"><label for="aligncontent_flexstart"><code>flex-start</code></label><input type="radio" name="aligncontent" id="aligncontent_flexstart" data-propvalue="flex-start" /></div>
+					<div class="element-container"><label for="aligncontent_flexend"><code>flex-end</code></label><input type="radio" name="aligncontent" id="aligncontent_flexend" data-propvalue="flex-end" /></div>
+					<div class="element-container"><label for="aligncontent_center"><code>center</code></label><input type="radio" name="aligncontent" id="aligncontent_center" data-propvalue="center" /></div>
+					
+					<div class="element-container"><label for="aligncontent_spacebetween"><code>space-between</code></label><input type="radio" name="aligncontent" id="aligncontent_spacebetween" data-propvalue="space-between" /></div>
+
+					<div class="element-container"><label for="aligncontent_spacearound"><code>space-around</code></label><input type="radio" name="aligncontent" id="aligncontent_spacearound" data-propvalue="space-around" /></div>
+					<div class="element-container"><label for="aligncontent_spaceevenly"><code>space-evenly</code></label><input type="radio" name="aligncontent" id="aligncontent_spaceevenly" data-propvalue="space-evenly" /></div>
+				</div>		
+			</fieldset>
+
+
+			<fieldset>
+				<legend>Override target box properties</legend>
+				<div class="flex-options targetbox-options">
+					<div class="element-container"><label for="target_width">Set width of the box (100px|em|%): </label><input type="text" name="target_width" id="target_width"></div>
+					<div class="element-container"><label for="target_height">Set height of the box (100px|em|%): </label><input type="text" name="target_height" id="target_height"></div>
+					<div class="element-container"><button type="button" onclick="targetBox_setProperties()">Apply!</button></div>
+					<div class="element-container"><button type="button" onclick="targetBox_resetProperties()">Reset</button></div>
+				</div>
+			</fieldset>
 
 		</form>
 	</div>
+
+
+
 
 	<div class="item-container flex-container" id="flex_directions"> 
 		<div class="flex-item item-1"><div class="size-emulator">1</div></div> 

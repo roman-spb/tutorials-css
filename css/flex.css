@@ -21,11 +21,23 @@ BODY {
 	white-space: nowrap;
 }
 
+.targetbox-options {
+	justify-content:  flex-start;
+}
+
+.targetbox-options input[type='text'] {
+	width: 4em;
+}
+
+.targetbox-options .element-container {
+	margin-right: 1em;
+}
+
 legend, label {
 	font-size: 1em;
 }
 
-label {
+label, button {
 	cursor: pointer;
 }
 
