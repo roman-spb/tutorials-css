@@ -2,16 +2,21 @@
 <html>
 <head>
 	<title>Flex tutorial</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/template.css" />
 	<link rel="stylesheet" type="text/css" href="css/flex.css" />
+	
 	<script type="text/javascript" src="js/flex.js"></script>
 </head>
 <body>
 <header>
-	<h7>CSS Tutorials v.0.7</h7></header>
+	<h1>CSS Tutorials v.0.1</h1></header>
 <article>
 	<h2>Flex</h2>
 	<!--
 	https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+	https://flexboxfroggy.com
 	-->		
 	<div class="item-container">
 		<form>
@@ -85,10 +90,10 @@
 
 
 			<fieldset>
-				<legend>Inner item properties</legend>
-				<div class="flex-options item-options">
+				<legend>Inner item properties <button type="button" onclick="show_hide('flex_items_control')">*</button></legend>
+				<div class="flex-options item-options" id="flex_items_control" style="display: none;">
 					<div class="element-container"> 
-						<fieldset data-propname="order" id="flex_itemorder_control"> 
+						<fieldset data-propname="order" data-default="0" id="flex_itemorder_control"> 
 							<legend><code>order</code></legend>
 							<div class="row-group">
 								<div class="row"><label for="order_1">Item 1: </label><input type="text" name="order_1" id="order_1" value="0" /></div>
@@ -98,12 +103,12 @@
 								<div class="row"><label for="order_5">Item 5: </label><input type="text" name="order_5" id="order_5" value="0" /></div>
 								<div class="row"><label for="order_6">Item 6: </label><input type="text" name="order_6" id="order_6" value="0" /></div>
 								<div class="row"><label for="order_7">Item 7: </label><input type="text" name="order_7" id="order_7" value="0" /></div>
-								<div class="row center"><button type="button">Set</button><button type="button">Reset</button></div>
+								<div class="row center"><button type="button" onclick="apply_values('flex_itemorder_control')">Set</button><button type="button" onclick="reset_values('flex_itemorder_control')">Reset</button></div>
 							</div>
 						</fieldset>
 					</div>
 					<div class="element-container">
-						<fieldset data-propname="flex-grow" id="flex_itemflexgrow_control"> 
+						<fieldset data-propname="flex-grow" data-default="0" id="flex_itemflexgrow_control"> 
 							<legend><code>flex-grow</code></legend>
 							<div class="row-group">
 								<div class="row"><label for="flexgrow_1">Item 1: </label><input type="text" name="flexgrow_1" id="flexgrow_1" value="0" /></div>
@@ -118,7 +123,7 @@
 						</fieldset>
 					</div>
 					<div class="element-container">
-						<fieldset data-propname="flex-shrink"> 
+						<fieldset data-propname="flex-shrink" data-default="0" id="flex_itemflexshrink_control"> 
 							<legend><code>flex-shrink</code></legend>
 							<div class="row-group">
 								<div class="row"><label for="flexshrink_1">Item 1: </label><input type="text" name="flexshrink_1" id="flexshrink_1" value="0" /></div>
@@ -133,7 +138,7 @@
 						</fieldset>					
 					</div>
 					<div class="element-container">
-						<fieldset data-propname="flex-basis"> 
+						<fieldset data-propname="flex-basis" data-default="auto" id="flex_itemflexbasis_control">
 							<legend><code>flex-basis</code></legend>
 							<div class="row-group">
 								<div class="row"><label for="flexbasis_1">Item 1: </label><input type="text" name="flexbasis_1" id="flexbasis_1" value="auto" /></div>
@@ -148,7 +153,7 @@
 						</fieldset>					
 					</div>				
 					<div class="element-container">
-						<fieldset data-propname="align-self"> 
+						<fieldset data-propname="align-self" data-default="auto" id="flex_itemalignself_control"> 
 							<legend><code>align-self</code></legend>
 							<div class="row-group">
 								<div class="row">

@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
-	console.log && console.log('DOM ready');
-	
-	// 01. directions
+
+	// 01. flex-direction
 	var directionsControlElement = document.getElementById('flex_direction_control');
 	var directionsElement = document.getElementById('flex_directions');
 
@@ -17,14 +16,13 @@ function ready() {
 		});
 	}
 
-
+	// 02. justify-content
 	var justifyContentControlElement = document.getElementById('flex_justifycontent_control');
 	var justifyContentElement = document.getElementById('flex_directions');
 
 	toggles = justifyContentControlElement.getElementsByTagName('input');
 
-	//TODO for column direction
-	// justifyContentElement.style.height = '700px';
+	//TODO checkbox to toggle width/height
 
 	for(var i = 0; i< toggles.length; i++) {
 		toggles[i].addEventListener('change', function() {
@@ -34,6 +32,7 @@ function ready() {
 		});
 	}
 
+	// 03. flex-wrap
 	var wrapControlElement = document.getElementById('flex_wrap_control');
 	var wrapElement = document.getElementById('flex_directions');
 
@@ -48,13 +47,14 @@ function ready() {
 		});
 	}
 
+	// 04. align-items
+
 	var alignItemsControlElement = document.getElementById('flex_alignitems_control');
 	var alignItemsElement = document.getElementById('flex_directions');
 
 	toggles = alignItemsControlElement.getElementsByTagName('input');
 
-	//TODO for column direction
-	// justifyContentElement.style.height = '700px';
+	//TODO checkbox to toggle width/height
 
 	for(var i = 0; i< toggles.length; i++) {
 		toggles[i].addEventListener('change', function() {
@@ -64,7 +64,7 @@ function ready() {
 		});
 	}
 
-
+	// 05. align-content
 	var alignContentControlElement = document.getElementById('flex_aligncontent_control');
 	var alignContentElement = document.getElementById('flex_directions');
 
@@ -78,7 +78,24 @@ function ready() {
 		});
 	}
 
+}
 
+
+// item subcontrols
+
+function apply_values(subcontrolId) {
+
+}
+
+function reset_values(subcontrolId) {
+	
+}
+
+/* other functions */
+
+function show_hide(targetId) {
+	var el = document.getElementById(targetId);
+	el.style.display = (el.style.display == 'none') ? 'flex' : 'none';
 }
 
 function targetBox_resetProperties() {
@@ -103,14 +120,14 @@ function  targetBox_setProperties() {
 		document.getElementById('target_width').style.backgroundColor = '#ce5567';
 	} else {
 		document.getElementById('target_width').style.backgroundColor = '';
-		tgt.style.width = w;
+		tgt.style.width = isNaN(w)? w : w + 'px';
 	}
 
 	if(!size_valid(h)) {
 		document.getElementById('target_height').style.backgroundColor = '#ce5567';
 	} else {
 		document.getElementById('target_height').style.backgroundColor = '';
-		tgt.style.height = h;
+		tgt.style.height = isNaN(h)? h : h + 'px';
 	}
 }
 
@@ -118,7 +135,7 @@ function size_valid(arg) {
 	var proc = arg.trim();
 	console.log(arg);
 	if(proc === "") return true;
-	var res = /^\d+(px)|(em)|%$/i.test(proc);
+	var res = /^\d+((px)|(em)|%)?$/i.test(proc);
 	return res;
 }
 
