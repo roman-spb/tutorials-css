@@ -83,12 +83,93 @@ function ready() {
 
 // item subcontrols
 
+var prop = {
+	"order" : function(el, val) {
+		var tgt = document.getElementById(el);
+		if(tgt == null) {
+			console.log(tgt + " not exists");
+			return;
+		} 
+		tgt.style.order = val;
+	},
+	"flex-grow" : function(el, val) {
+		var tgt = document.getElementById(el);
+		if(tgt == null) {
+			console.log(tgt + " not exists");
+			return;
+		}
+		tgt.style.flexGrow = val;
+	},
+	"flex-shrink" : function(el, val) {
+		var tgt = document.getElementById(el);
+		if(tgt == null) {
+			console.log(tgt + " not exists");
+			return;
+		}
+		tgt.style.flexShrink = val;
+	},
+	"flex-basis" : function(el, val) {
+		var tgt = document.getElementById(el);
+		if(tgt == null) {
+			console.log(tgt + " not exists");
+			return;
+		}
+		tgt.style.flexBasis = val;
+	},
+	"align-self" : function(el, val) {
+		var tgt = document.getElementById(el);
+		if(tgt == null) {
+			console.log(tgt + " not exists");
+			return;
+		}
+		tgt.style.alignSelf = val;
+	}
+}
+
+
+
 function apply_values(subcontrolId) {
 
+	var cntl = document.getElementById(subcontrolId);
+	if(cntl == null) { 
+		alert ('control is null') ;
+		return; 
+	}
+	var propName = cntl.getAttribute('data-propname');
+	var idprefix = propName.replace('-', '') + '_';
+
+	var f = prop[propName];
+	
+	var iterable = cntl.getElementsByTagName('*');
+	
+	for(var i = 0; i < iterable.length; i++) {
+		var curr = iterable[i];
+		if(curr.id && curr.id.indexOf(idprefix) === 0) {
+			var targetId = "item_" + curr.id.replace(idprefix, '');
+			var val = document.getElementById(curr.id).value;
+			f(targetId, val);
+		}
+	}
 }
 
 function reset_values(subcontrolId) {
+	var cntl = document.getElementById(subcontrolId);
+	if(cntl == null) { 
+		alert ('control is null') ;
+		return; 
+	}
+	var propName = cntl.getAttribute('data-propname');
+	var defaultVal = cntl.getAttribute('data-default');
+	var idprefix = propName.replace('-', '') + '_';
 	
+	var iterable = cntl.getElementsByTagName('*');
+	
+	for(var i = 0; i < iterable.length; i++) {
+		var curr = iterable[i];
+		if(curr.id && curr.id.indexOf(idprefix) === 0) {
+			document.getElementById(curr.id).value = defaultVal;
+		}
+	}
 }
 
 /* other functions */
