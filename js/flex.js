@@ -136,7 +136,7 @@ function apply_values(subcontrolId) {
 		return; 
 	}
 	var propName = cntl.getAttribute('data-propname');
-	var idprefix = propName.replace('-', '') + '_';
+	var idPrefix = propName.replace('-', '') + '_';
 
 	var f = prop[propName];
 	
@@ -144,7 +144,7 @@ function apply_values(subcontrolId) {
 	
 	for(var i = 0; i < iterable.length; i++) {
 		var curr = iterable[i];
-		if(curr.id && curr.id.indexOf(idprefix) === 0) {
+		if(curr.id && curr.id.indexOf(idPrefix) === 0) {
 			var targetId = "item_" + curr.id.replace(idprefix, '');
 			var val = document.getElementById(curr.id).value;
 			f(targetId, val);
